@@ -10,7 +10,7 @@ describe('SimpleDb', () => {
   it('should save a json file in the store dir', () => {
 
     const storeHouse = new SimpleDb(rootDir);
-    const jsonFile = { id:'' };
+    const jsonFile = { 'id': '1', 'name':'ruby!' } ;
 
     return storeHouse
       .store(jsonFile)
@@ -18,5 +18,5 @@ describe('SimpleDb', () => {
       .then((retrievedFile) => expect(retrievedFile.toEqual(jsonFile)));
   });
 
-  
+
 });
