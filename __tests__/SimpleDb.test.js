@@ -15,7 +15,8 @@ describe('SimpleDb', () => {
     return storeHouse
       .store(jsonFile)
       .then(() => storeHouse.get())
-      .then((retrievedFile) => expect(retrievedFile.toEqual(jsonFile)));
+      .then((gotFile) => storeHouse.parse(gotFile))
+      .then((retrievedFile) => expect(retrievedFile).toEqual(jsonFile));
   });
 
 
